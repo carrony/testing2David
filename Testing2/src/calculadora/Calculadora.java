@@ -17,7 +17,10 @@ public class Calculadora {
 	
 	static float divide (int a , int b) {
 		//if (b==0) return 0;
-		return a/b;
+		if (b==0) {
+			throw new ArithmeticException("División por cero");
+		}
+		return a/(float)b;
 	}
 	
 	static boolean esPar(int num) {
@@ -30,7 +33,7 @@ public class Calculadora {
 	
 	
 	static boolean esPrimo(int num) {
-		num=Math.abs(num);
+		if (num<2) return false;
 		for (int i=2; i<num;i++) {
 			if (num%i==0) return false;
 		}
